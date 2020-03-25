@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+
+    // baseUrlForProd
+  baseUrl: 'https://mbi-app-api.herokuapp.com/'
 };
