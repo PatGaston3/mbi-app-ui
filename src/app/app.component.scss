@@ -1,0 +1,58 @@
+.body-text {
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+  li {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+  }
+}
+
+.card-mbi {
+  min-height: 300px;
+}
+
+.validator-text {
+  margin-top: -20px;
+
+  p {
+    font-weight: 600;
+  }
+
+  .valid {
+    color: #28A745;
+  }
+  .invalid {
+    color: #EC250D;
+  }
+}
+
+.error {
+  border: 1px #EC250D solid;
+}
+
+.generated-block {
+  height: 120px;
+  margin-top: 20px;
+
+  p {
+    font-size: 48px;
+  }
+
+  .form-group {
+    input {
+      height: 60px;
+      font-size: 26px;
+    }
+  }
+}
+
+
+@media (max-width: 720px) {
+  .generated-block {
+    p {
+      font-size: 38px;
+    }
+  }
+
+}

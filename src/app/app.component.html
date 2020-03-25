@@ -1,0 +1,148 @@
+<div class="wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="https://www.creative-tim.com?ref=bda-sidebar-logo" class="simple-text logo-mini">
+        <div class="logo-img">
+          <img src="./assets/img/angular2-logo-white.png"/>
+        </div>
+      </a>
+      <a href="https://www.creative-tim.com?ref=bda-sidebar-logo" class="simple-text logo-normal">
+        Menu
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active">
+          <a><i _ngcontent-kan-c112="" class="icon-chart-pie-36 tim-icons"></i> Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.Sidebar -->
+  <div class="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+      <div class="container-fluid">
+        <div class="navbar-collapse" id="navigation">
+          <a class="nav-link"><img src="../assets/img/logo-100plus.png" height="30"></a>
+          <ul class="navbar-nav ml-auto">
+            <li class=" separator d-lg-none"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- /.Navbar -->
+    <div class=" content">
+      <div class=" row">
+        <div class=" col-12">
+          <div class=" card card-chart">
+            <div class=" card-header">
+              <div class=" row">
+                <div class="col-12 text-left">
+                  <h5 class=" card-category">Breaking it down</h5>
+                  <h2 class=" card-title">Understanding the Medicare Beneficiary Identifier (MBI) Format</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" card-body">
+              <div class="body-text">
+                <p class=" title">How many characters does the MBI have?</p>
+                <p>The MBI has 11 characters.</p>
+              </div>
+
+              <div class="body-text">
+                <p class=" title">Does the MBI’s characters have any meaning?</p>
+                <p>Each MBI is randomly generated. The MBI’s characters are “non-intelligent” so
+                  they don’t have any hidden or special meaning.</p>
+              </div>
+
+              <div class="body-text">
+                <p class=" title">What kinds of characters are in the MBI?</p>
+                <p>MBIs are numbers and upper-case letters. We use numbers 1-9 and all letters
+                  from A to Z, except for S, L, O, I, B, and Z. If you use lowercase letters, our system will
+                  convert them to uppercase letters</p>
+              </div>
+
+              <div class="body-text">
+                <p class=" title">How does the MBI look on the card?</p>
+                <p>The MBI has letters and numbers. Here’s an example: 1EG4-TE5-MK73</p>
+                <ul>
+                  <li>The MBI’s 2nd, 5th, 8th, and 9th characters are always letters.</li>
+                  <li>Characters 1, 4, 7, 10, and 11 are always numbers.</li>
+                  <li>he 3rd and 6th characters are letters or numbers.</li>
+                  <li>We don’t use dashes in the MBI. They aren’t part of our computer systems and we don’t use them in
+                    file formats
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" row">
+        <div class=" col-lg-6">
+          <div class=" card card-mbi">
+            <div class=" card-header">
+              <h5 class=" card-category">Need a Medicare Beneficiary Identifier?</h5>
+              <h3 class=" card-title">
+                <i class=" tim-icons icon-badge text-danger-states"> </i> Generate an MBI
+              </h3>
+            </div>
+            <div class=" card-body">
+              <div class="generated-block text-center">
+                <p>{{generatedMBI}}</p>
+                <button (click)="getRandomMbi()" class=" btn btn-fill btn-danger" type="submit">Generate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-6">
+          <div class=" card card-mbi">
+            <div class=" card-header">
+              <h5 class=" card-category">Validate an MBI</h5>
+              <h3 class=" card-title">
+                <i class=" tim-icons icon-check-2 text-info"> </i> Validate an MBI
+              </h3>
+            </div>
+            <div class=" card-body">
+              <div *ngIf="formError" class="validator-text text-center">
+                <p class="invalid">Enter an MBI to validate</p>
+              </div>
+              <div *ngIf="isValid != undefined" class="validator-text text-center">
+                <p *ngIf="isValid" class="valid"><i class=" tim-icons icon-check-2"> </i> Valid!</p>
+                <p *ngIf="!isValid" class="invalid"><i class=" tim-icons icon-simple-remove"> </i> invalid!</p>
+              </div>
+              <div class="generated-block text-center">
+                <form (ngSubmit)="validateMbi(inputData)">
+                  <div class=" form-group">
+                    <input [(ngModel)]="inputData"
+                           [ngClass]="{'error': formError}"
+                           name="mbiInput"
+                           class=" form-control"
+                           placeholder="Enter MBI"
+                           type="text"
+                            autocomplete="off"/>
+                  </div>
+                  <button class=" btn btn-fill btn-danger" type="submit">Validate</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class=" footer">
+      <div class=" container-fluid">
+        <div class="copyright">
+          &copy; 2020 made with
+          <i class="tim-icons icon-heart-2"> </i> by
+          <a href="http://patrickgaston.com" target="_blank"> Patrick Gaston</a>
+        </div>
+      </div>
+    </footer>
+    <!-- /.Footer -->
+  </div>
+</div>
+
